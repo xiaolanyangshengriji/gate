@@ -6,8 +6,9 @@ name: VPN Gate Node Check
 # on:
 #   schedule:
 #     - cron: '*/30 * * * *'
-
 on:
+  schedule:
+    - cron: '0 */12 * * *'
   workflow_dispatch:
     inputs:
       max_nodes:
@@ -22,6 +23,7 @@ on:
         description: '单节点检测超时（秒）'
         required: false
         default: '25'
+
 
 permissions:
   contents: read
